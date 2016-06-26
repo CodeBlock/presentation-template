@@ -1,0 +1,81 @@
+\ProvidesPackage{beamerthemeRBE}
+  [2016/06/25 v1.0 beamer RBE theme]
+
+\mode<presentation>
+
+\usepackage{fancybox}
+\usepackage{mdframed}
+\usepackage{thmtools}
+
+\usepackage[sfdefault]{FiraSans}
+\usepackage[T1]{fontenc}
+\renewcommand*\oldstylenums[1]{{\firaoldstyle #1}}
+
+\setbeamerfont{note page}{family*=pplx,size=\footnotesize}
+
+\useinnertheme{default}
+\useoutertheme{default}
+
+\setbeamerfont{author}{size=\large}
+\setbeamerfont{date}{size=\tiny}
+\setbeamerfont{institute}{size=\small}
+\setbeamerfont{example text}{series=\bfseries}
+\setbeamerfont{frametitle}{series=\bfseries,size=\large}
+\setbeamerfont{framesubtitle}{shape=\it}
+\setbeamerfont{section}{series=\bfseries}
+\setbeamerfont{title}{series=\bfseries,size=\Large}
+\setbeamerfont{serif}{family=\rmfamily,size=\Large}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{}
+%\setbeamertemplate{itemize items}{}
+
+\defbeamertemplate*{title page}{customized}[1][]{
+  \usebeamerfont{title}\inserttitle\par
+  \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par
+  \vspace{50mm}
+  \usebeamerfont{author}\insertauthor\par
+  \usebeamerfont{institute}\insertinstitute\par
+  \usebeamerfont{date}\insertdate\par
+  \usebeamercolor[fg]{titlegraphic}\inserttitlegraphic
+}
+
+
+\setbeamertemplate{frametitle}{
+  \insertframetitle\par
+  \usebeamerfont{framesubtitle}\insertframesubtitle\par
+  \color{pomegranate}{\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.5pt}}}
+}
+
+\setbeamertemplate{itemize item}{$\bullet$}
+\setbeamertemplate{navigation symbols}{}
+
+\setbeamertemplate{headline}{
+  \begin{beamercolorbox}{section in head/foot}
+    \vskip2pt\insertnavigation{\paperwidth}\vskip2pt
+  \end{beamercolorbox}
+}
+
+\declaretheoremstyle[
+  headfont=\bfseries,
+  notebraces={[}{]},
+  bodyfont=\rm\itshape,
+  postheadspace=\newline,
+  postheadhook={\textcolor{midnight}{\rule[.6ex]{\linewidth}{0.4pt}}\\},
+  spacebelow=\parsep,
+  spaceabove=\parsep,
+  mdframed={
+    backgroundcolor=white!20,
+    innertopmargin=6pt,
+    roundcorner=5pt,
+    innerbottommargin=6pt,
+    skipabove=\parsep,
+    skipbelow=\parsep }
+]{myexamplestyle}
+
+\declaretheorem[
+    style=myexamplestyle,
+    name=Definition
+]{definitionserif2}
+
+\mode<all>
