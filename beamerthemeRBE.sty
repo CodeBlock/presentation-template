@@ -1,5 +1,5 @@
 \ProvidesPackage{beamerthemeRBE}
-  [2014/05/21 v1.0 beamer RBE theme]
+  [2016/06/25 v1.0 beamer RBE theme]
 
 \mode<presentation>
 
@@ -7,10 +7,12 @@
 \usepackage{mdframed}
 \usepackage{thmtools}
 
-\usepackage[default]{opensans}
-\setbeamerfont{note page}{family*=pplx,size=\footnotesize} % Palatino for notes
+\usepackage[sfdefault]{FiraSans}
+\usepackage[T1]{fontenc}
+\renewcommand*\oldstylenums[1]{{\firaoldstyle #1}}
 
-\usecolortheme{RBE}
+\setbeamerfont{note page}{family*=pplx,size=\footnotesize}
+
 \useinnertheme{default}
 \useoutertheme{default}
 
@@ -52,12 +54,6 @@
     \vskip2pt\insertnavigation{\paperwidth}\vskip2pt
   \end{beamercolorbox}
 }
-
-\setbeamercolor{title}{fg=midnight}
-\setbeamercolor{frametitle}{fg=midnight}
-\setbeamercolor{normal text}{fg=midnight}
-\setbeamercolor{itemize item}{fg=midnight}
-\setbeamercolor{enumerate item}{fg=midnight}
 
 \declaretheoremstyle[
   headfont=\bfseries,
